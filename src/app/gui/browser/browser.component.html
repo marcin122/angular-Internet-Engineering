@@ -1,0 +1,41 @@
+<div class="flex-container" fxLayout="column" fxLayout.xs="column">
+  <div fxFlex>
+    <md-card>
+      <h3>Author search</h3>
+      <md-input-container>
+        <input type="text" mdInput [formControl]="authorControl" [mdAutocomplete]="autoA" placeholder="name">
+      </md-input-container>
+
+      <md-autocomplete #autoA="mdAutocomplete" [displayWith]="displayAuthor">
+        <md-option *ngFor="let author of filteredAuthors | async" [value]="author"
+                   (onSelectionChange)="selectedAuthor = author">
+          {{ author.name }}
+        </md-option>
+      </md-autocomplete>
+
+      <div [hidden]="!selectedAuthor" *ngIf="selectedAuthor != null">
+        {{ selectedAuthor.id }} - {{ selectedAuthor.name }}
+      </div>
+    </md-card>
+  </div>
+
+  <div fxFlex>
+    <md-card>
+      <h3>Book search</h3>
+      <md-input-container>
+        <input type="text" mdInput [formControl]="bookControl" [mdAutocomplete]="autoB" placeholder="title">
+      </md-input-container>
+
+      <md-autocomplete #autoB="mdAutocomplete" [displayWith]="displayBook">
+      <md-option *ngFor="let book of filteredBooks | async" [value]="book"
+                 (onSelectionChange)="selectedBook = book">
+        {{ book.title }}
+      </md-option>
+      </md-autocomplete>
+
+      <div [hidden]="!selectedBook">
+      //TODO
+      </div>
+    </md-card>
+  </div>
+</div>

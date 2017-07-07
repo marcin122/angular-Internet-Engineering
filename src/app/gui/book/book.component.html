@@ -1,0 +1,35 @@
+<div class="flex-container" fxLayout="row" fxLayout.xs="column">
+  <div fxFlex>
+    <md-card>
+      <md-nav-list>
+        <md-list-item (click)="onEditBook(book)" *ngFor="let book of books">
+          <a md-line>{{ book.title }}</a>
+          <button md-icon-button (click)="onRemoveBook(book)">
+            <md-icon class="material-icons">delete</md-icon>
+          </button>
+        </md-list-item>
+      </md-nav-list>
+    </md-card>
+  </div>
+  <div fxFlex>
+    <md-card>
+      <md-select [(ngModel)]="selectedBook.author" placeholder="Author"
+                 style="width: 100%">
+        <md-option *ngFor="let author of authors" [value]="author">{{ author.name }}</md-option>
+      </md-select>
+      <md-input-container style="width: 100%">
+        <input [(ngModel)]="selectedBook.title" mdInput placeholder="Title">
+      </md-input-container>
+
+      <button md-raised-button (click)="onSaveBook(selectedBook)">
+        <md-icon class="material-icons">save</md-icon>
+        <span>Save</span>
+      </button>
+
+      <button md-raised-button (click)="onAddBook(selectedBook)">
+        <md-icon class="material-icons">add</md-icon>
+        <span>Add</span>
+      </button>
+    </md-card>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="flex-container" fxLayout="row" fxLayout.xs="column">
+  <div fxFlex>
+    <md-card>
+      <md-nav-list>
+        <md-list-item (click)="onEditAuthor(author)" *ngFor="let author of authors">
+          <a md-line>{{ author.name }}</a>
+          <button md-icon-button (click)="onRemoveAuthor(author)">
+            <md-icon class="material-icons">delete</md-icon>
+          </button>
+        </md-list-item>
+      </md-nav-list>
+    </md-card>
+  </div>
+  <div fxFlex>
+    <md-card>
+      <md-input-container style="width: 100%">
+        <input [(ngModel)]="selectedAuthor.name" mdInput placeholder="First name">
+      </md-input-container>
+
+      <button md-raised-button (click)="onSaveAuthor(selectedAuthor)">
+        <md-icon class="material-icons">save</md-icon>
+        <span>Save</span>
+      </button>
+
+      <button md-raised-button (click)="onAddAuthor(selectedAuthor)">
+        <md-icon class="material-icons">add</md-icon>
+        <span>Add</span>
+      </button>
+    </md-card>
+  </div>
+</div>

@@ -1,6 +1,6 @@
-import { browser, element, by } from 'protractor';
+import { browser, by, element } from 'protractor';
 
-export class Angu2Page {
+export class IeAngularMaterialPage {
   navigateTo() {
     return browser.get('/');
   }

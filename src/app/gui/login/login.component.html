@@ -1,0 +1,28 @@
+<div class="full-screen">
+  <div class="full-screen login-container" fxLayout="column" fxLayoutAlign="center center">
+    <div fxFlex="30">
+      <md-card fxLayout="column">
+        <form name="loginForm" (ngSubmit)="login()">
+          <div>
+            <md-input-container>
+              <input mdInput placeholder="Login" [(ngModel)]="username" name="username">
+            </md-input-container>
+          </div>
+
+          <div>
+            <md-input-container>
+              <input type="password" mdInput placeholder="Password" [(ngModel)]="password" name="password">
+            </md-input-container>
+          </div>
+
+          <div fxLayout="column">
+            <button md-raised-button color="primary" [disabled]="loading">
+              <md-icon class="material-icons">fingerprint</md-icon>
+              <span>Login</span>
+            </button>
+          </div>
+        </form>
+      </md-card>
+    </div>
+  </div>
+</div>

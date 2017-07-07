@@ -1,0 +1,14 @@
+<md-toolbar color="primary">
+  <span>Internet Engineering</span>
+</md-toolbar>
+
+<nav md-tab-nav-bar>
+  <a md-tab-link routerLink="/store/author"
+     routerLinkActive #linkAuthor="routerLinkActive" [active]="linkAuthor.isActive">Authors</a>
+  <a md-tab-link routerLink="/store/book"
+     routerLinkActive #linkBook="routerLinkActive" [active]="linkBook.isActive">Books</a>
+  <a md-tab-link routerLink="/store/browser"
+     routerLinkActive #linkBrowser="routerLinkActive" [active]="linkBrowser.isActive">Browser</a>
+</nav>
+
+<router-outlet></router-outlet>

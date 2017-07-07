@@ -1,10 +1,10 @@
-import { Angu2Page } from './app.po';
+import { IeAngularMaterialPage } from './app.po';
 
-describe('angu2 App', () => {
-  let page: Angu2Page;
+describe('ie-angular-material App', () => {
+  let page: IeAngularMaterialPage;
 
   beforeEach(() => {
-    page = new Angu2Page();
+    page = new IeAngularMaterialPage();
   });
 
   it('should display message saying app works', () => {
